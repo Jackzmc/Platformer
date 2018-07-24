@@ -1,0 +1,23 @@
+body {
+    background-color: gray;
+}
+.center-container {
+    position: relative;
+}
+.center-child {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:100px;
+}
