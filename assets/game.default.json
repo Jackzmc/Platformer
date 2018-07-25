@@ -4,10 +4,12 @@
         "res":[1920,1080],
         "difficulty":"normal"
     },
-    "xp":{
-        "lvl":"1",
-        "amount":0
-    },
-    "inventory":[],
-    "cash":10
+    "player":{
+        "xp":{
+            "lvl":"0",
+            "amount":0
+        },
+        "inventory":[],
+        "cash":10
+    }
 }

@@ -1,30 +1,23 @@
 const remote = require('electron').remote;
 const fs = require('fs-extra');
+const menumusic = new Audio('../assets/audio/menu.mp3');
 const graceful = require('../modules/graceful.js');
+
+const {getSettings,newGame} = require('../modules/utils')
 particlesJS.load('particles-js', '../assets/particles.json', function() {
     console.log('callback - particles.js config loaded');
 });
-try {
-    const gameFile = fs.readFile('./game.json','utf-8')
-    .then(gameFile => {
-        const game = JSON.parse(gameFile);
-        if(game.options.fullscreen) remote.getCurrentWindow().maximize();
-        //remote.getCurrentWindow().setResolution
-    })
+if(stash.get('player'))  {
     $('#btn_continue').show().click(() => {
-
+        graceful('game.html')
     })
-}catch(err) {
-    $('#btn_continue').hide();
 }
 
 //btn_continue, btn_start, btn_options, btn_exit 
 $('#btn_start').click(async() => {
-    //start
-    const defaultFile = await fs.readFile('./assets/game.default.json','utf-8');
-    console.log(defaultFile)
-    const file = await fs.writeFile('./game.json',defaultFile)
-    alert('game started');
+    const gameDefault = await fs.readFile('./assets/game.default.json','utf-8');
+    stash.set('player',JSON.parse(gameDefault).player);
+    graceful('game.html')
 })
 $('#btn_options').click(() => {
     graceful('options.html');
@@ -33,3 +26,9 @@ $('#btn_options').click(() => {
 document.getElementById('btn_quit').addEventListener('click',(e) => {
     remote.getCurrentWindow().close();
 })
+
+const settings = stash.get('settings');
+if(settings.menu_music) {
+    menumusic.volume = 0.1;
+    menumusic.play();
+}

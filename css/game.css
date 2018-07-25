@@ -1,0 +1,12 @@
+canvas {
+	display: block;
+	background-image: url("start.png");
+	background-size: cover;
+	width: 100%;
+	height: 1000px;
+}
+body { 
+	background-color: gray;
+	padding:0;
+	margin: 0;
+}
