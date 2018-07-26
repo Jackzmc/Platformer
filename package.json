@@ -1,6 +1,6 @@
 {
   "name": "Platformer",
-  "version": "0.1",
+  "version": "0.1.0",
   "main": "core.js",
   "start": "electron .",
   "author": "Jackz <me@jackz.me>",

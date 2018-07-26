@@ -5,10 +5,8 @@
         "difficulty":"normal"
     },
     "player":{
-        "xp":{
-            "lvl":"0",
-            "amount":0
-        },
+        "level":0,
+        "xp":0,
         "inventory":[],
         "cash":10
     }

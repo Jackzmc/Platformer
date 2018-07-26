@@ -14,6 +14,8 @@ RESOLUTIONS.forEach(v => {
     const checked = (options && v[0] === options.width && v[1] === options.height) ? 'checked':'';
     $('#opt_resSelect').append(`<option ${checked} id='res_${v[0]}-${v[1]}'>${v[0]} x ${v[1]}`);
 })
+$('#opt_fullscreen').prop('checked',options.fullscreen);
+$('#opt_menumusic').prop('checked',options.menu_music);
 $('#btn_save').click(async() => {
     const settings = {};
     settings.fullscreen = $('#opt_fullscreen').prop('checked');
